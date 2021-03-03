@@ -51,7 +51,7 @@ def save_ppm_ascii( screen, fname ):
             row+= str( pixel[ RED ] ) + ' '
             row+= str( pixel[ GREEN ] ) + ' '
             row+= str( pixel[ BLUE ] ) + ' '
-        ppm+= row + '\n'
+        ppm += row + '\n'
     f.write( ppm )
     f.close()
 
@@ -67,7 +67,7 @@ def save_extension( screen, fname ):
     img.save(fname, 'PNG')
     # ppm_name = fname[:fname.find('.')] + '.ppm'
     # save_ppm_ascii( screen, ppm_name )
-    # p = Popen( ['convert', ppm_name, fname ], stdin=PIPE, stdout = PIPE )
+    # p = Popen( ['magick', ppm_name, fname ], stdin=PIPE, stdout = PIPE )
     # p.communicate()
     # remove(ppm_name)
 
