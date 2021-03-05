@@ -12,20 +12,24 @@ import math
 #print the matrix such that it looks like
 #the template in the top comment
 def print_matrix( matrix ):
-    pass
+    for x in range(4):
+        print(" ".join(str(i[x]) for i in matrix))
 
 #turn the paramter matrix into an identity matrix
 #you may assume matrix is square
 def ident( matrix ):
-    pass
+    size = len(matrix)
+    for i in range(size):
+        for j in range(size):
+            if (i == j):
+                matrix[i][j] = 1
+            else:
+                matrix[i][j] = 0
 
 #multiply m1 by m2, modifying m2 to be the product
 #m1 * m2 -> m2
 def matrix_mult( m1, m2 ):
     pass
-
-
-
 
 def new_matrix(rows = 4, cols = 4):
     m = []
