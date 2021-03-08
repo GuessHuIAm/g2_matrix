@@ -13,7 +13,7 @@ import math
 #the template in the top comment
 def print_matrix( matrix ):
     for x in range(4):
-        print(" ".join(str(i[x]) for i in matrix))
+        print(" ".join(str(float(i[x])) for i in matrix))
 
 #turn the paramter matrix into an identity matrix
 #you may assume matrix is square
@@ -29,7 +29,14 @@ def ident( matrix ):
 #multiply m1 by m2, modifying m2 to be the product
 #m1 * m2 -> m2
 def matrix_mult( m1, m2 ):
-    pass
+    matrix = new_matrix(rows = 4, cols = len(m2))
+    for col2 in range(len(m2)):
+        for row1 in range(len(m1[0])):
+            for col1 in range(len(m1)):
+                matrix[col2][row1] += m1[col1][row1] * m2[col2][col1]
+    for row in range(len(matrix)):
+        for col in range(len(matrix[0])):
+            m2[row][col] = matrix[row][col]
 
 def new_matrix(rows = 4, cols = 4):
     m = []
